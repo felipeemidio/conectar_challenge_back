@@ -9,6 +9,14 @@ Tech:
 - Bcrypt
 - Jest
 
+## Architecture
+
+Arquitetura MVC
+
+- **Model** são as **Entidades**
+- **View** são os **Controllers**
+- **Controllers** são os **Serviços**
+
 ## Project setup
 
 ```bash
@@ -63,10 +71,4 @@ $ npm run test
 └── README.md
 ```
 
-## Architecture
 
-Arquitetura MVC
-
-- **Model** são as **Entidades**
-- **View** são os **Controllers**
-- **Controllers** são os **Serviços**
