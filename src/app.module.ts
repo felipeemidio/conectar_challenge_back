@@ -14,7 +14,7 @@ import { Customer } from './customers/entities/customer.entity';
     ConfigModule.forRoot({ isGlobal: true }),
     TypeOrmModule.forRoot({
       type: 'sqlite',
-      database: process.env.DATABASE_PATH,
+      database: 'conectar_db.sqlite',
       synchronize: true,
       entities: [User, Customer],
     }),
