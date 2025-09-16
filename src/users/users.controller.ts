@@ -1,10 +1,10 @@
 import { Body, ClassSerializerInterceptor, Controller, Get, HttpCode, HttpStatus, Param, ParseEnumPipe, ParseIntPipe, Post, Put, Query, UseGuards, UseInterceptors, ValidationPipe } from '@nestjs/common';
 import { UsersService } from './users.service';
-import { AuthGuard } from 'src/auth/auth.guard';
 import { CreateUserDto } from './dto/create_user.dto';
 import { encodePassword } from 'src/core/utils/bcyipt';
 import { UserRole } from 'src/core/enum/user_role.enum';
 import { UpdateUserDto } from './dto/update_user.dto';
+import { AuthGuard } from 'src/auth/guards/auth.guard';
 
 @UseInterceptors(ClassSerializerInterceptor)
 @Controller('users')

@@ -1,10 +1,10 @@
 import { Body, Controller, Delete, Get, Param, ParseBoolPipe, ParseDatePipe, ParseIntPipe, Post, Put, Query, Request, UseGuards, ValidationPipe } from '@nestjs/common';
 import { CustomersService } from './customers.service';
 import { UserRole } from 'src/core/enum/user_role.enum';
-import { AuthGuard } from 'src/auth/auth.guard';
 import { CreateCustomerDto } from './dto/create_customer.dto';
 import { UpdateCustomerDto } from './dto/update_customer.dto';
 import { AdminGuard } from 'src/users/guards/admin.guard';
+import { AuthGuard } from 'src/auth/guards/auth.guard';
 
 @Controller('customers')
 export class CustomersController {
@@ -19,8 +19,6 @@ export class CustomersController {
         @Query('startDate', new ParseDatePipe({ optional: true })) startDate?: Date,
     ) {
         const role: UserRole = req.user.role;
-        console.log(isActive)
-        console.log(role)
         return this.costumersService.findAll(role, { name, cnpj, isActive, startDate });
     }
 

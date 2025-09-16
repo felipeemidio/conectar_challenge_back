@@ -1,9 +1,8 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { UsersController } from './users.controller';
 import { UsersService } from './users.service';
-import { User } from 'src/core/entites/user.entity';
 import { UserRole } from 'src/core/enum/user_role.enum';
-import { AuthGuard } from 'src/auth/auth.guard';
+import { AuthGuard } from 'src/auth/guards/auth.guard';
 
 describe('UsersController', () => {
   let controller: UsersController;
